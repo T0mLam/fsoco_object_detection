@@ -1,0 +1,11 @@
+path: C:\Users\admin\Desktop\FSAI\fsoco\object_detection\dataset
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: yellow_cone
+  1: blue_cone
+  2: orange_cone
+  3: large_orange_cone
+  4: unknown_cone

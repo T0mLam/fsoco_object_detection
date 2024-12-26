@@ -1,0 +1,4 @@
+*.pt
+runs/
+fsoco_bounding_boxes_train/
+dataset/
