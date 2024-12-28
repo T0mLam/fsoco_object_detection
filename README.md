@@ -42,7 +42,7 @@ _Set up the directory for training the YOLO models with the FSOCO dataset using 
     dataset/
     ├── images/
     │   ├── train/
-    |   ├── val/
+    │   ├── val/
     │   └── test/
     └── labels/
         ├── train/
@@ -134,7 +134,7 @@ _Set up the directory for training the YOLO models with the FSOCO dataset using 
     │   ├── train/
     │   │   ├── ecurieaix_00109.png
     │   │   ├── ...
-    |   ├── val/
+    │   ├── val/
     │   └── test/
     └── labels/
         ├── train/
