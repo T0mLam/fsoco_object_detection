@@ -174,11 +174,32 @@ _Set up the directory for training the YOLO models with the FSOCO dataset using 
         ```
 
 4. Test the trained model with the test dataset </br>
-    e.g.
-    using the trained yolo11n model with reshaped image size of <?>x640.
-    ```bash
-    yolo task=detect mode=predict model=yolov11n_640/weights/best.pt source=dataset/images/test save=True device=0
-    ```
+    - Configure the `test.py` file
+        ```python
+        import os
+        from ultralytics import YOLO
+
+        def main():
+            model = YOLO("yolov11n_640/weights/best.pt") # path to the model  
+
+            for root, dirs, files in os.walk("example_images"): # path to the test image directory
+                # run prediction on the every image in the directory 
+                for f in files:
+                    image_path = os.path.join(root, f)
+                    model.predict(image_path, save=True) 
+
+        if __name__ == '__main__':
+            main()
+        ```
+    - Run the command
+        ```bash
+        python test.py
+        ```
+            
+        or using the trained yolo11n model with reshaped image size of <?>x640.
+        ```bash
+        yolo task=detect mode=predict model=yolov11n_640/weights/best.pt source=dataset/images/test save=True device=0
+        ```
 
 ## TODO
 
