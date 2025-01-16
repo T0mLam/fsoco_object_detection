@@ -156,13 +156,28 @@ _Set up the directory for training the YOLO models with the FSOCO dataset using 
                 data="data.yaml", 
                 epochs=100, 
                 imgsz=1024, 
-                device=0, # use gpu
+                device=0, # use gpu, remove this line to use cpu
                 batch=-1,
                 plots=True
             )
 
         if __name__ == '__main__':
             main()
+        ```
+    - Configure the `data.yaml` file
+        ```bash
+        path: <path_to_dataset_dir>
+        # e.g. C:\Users\admin\Desktop\FSAI\fsoco\object_detection\dataset
+        train: images/train
+        val: images/val
+        test: images/test
+
+        names:
+            0: yellow_cone
+            1: blue_cone
+            2: orange_cone
+            3: large_orange_cone
+            4: unknown_cone
         ```
     - Run the command
         ```bash
